@@ -1,0 +1,9 @@
+-- 1. Script para poblar todas las tablas se encuentra mi_test_db.sql 
+
+-- 2. Listar a todos los usuarios activos
+SELECT * FROM usuarios WHERE isActive LIKE TRUE;
+
+-- 3. Obtener un informe completo de las canciones que le gustan a los usuarios activos, indicando el nombre del usuario, su genero, y el listado de las canciones
+SELECT nombre, genero, m.name FROM personas p
+   JOIN mimusica m ON m.persona_id = p.persona_id 
+   JOIN usuarios u ON u.persona_id = p.persona_id WHERE u.isActive LIKE TRUE;
