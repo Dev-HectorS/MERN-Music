@@ -7,6 +7,8 @@
 
    * BACKEND
 
+   * FRONTEND
+
 #### Importante
    * BACKEND
 
@@ -35,3 +37,10 @@
                MYSQL_PASSWORD=root
                
                MYSQL_DATABASE=mi_test_db
+
+   * FRONTEND
+
+      * Reconstruir módulos de Node: `npm install`
+
+      * Para levantar poyecto:
+         Run command `yarn start`
