@@ -1,9 +1,17 @@
 import { NavLink, Routes, Route, Navigate, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import { HomePage, ProfilePage, GustosPage } from './pages';
 
+import { initializeSignOut } from '../../actions/auth';
+
 export const GustosRouter = () => {
 
+   const dispatch = useDispatch()
+
+   const handleLogout = () => {
+      dispatch(initializeSignOut())
+   }
    return (
       <>
          <nav className="navbar navbar-expand-lg bg-light">
@@ -31,7 +39,7 @@ export const GustosRouter = () => {
                         </ul>
                      </li>
                   </ul>
-                  <button className="btn btn-outline-danger">Logout</button>
+                  <button className="btn btn-outline-danger" onClick={handleLogout}>Logout</button>
                </div>
             </div>
          </nav>
