@@ -29,7 +29,7 @@ CREATE TABLE usuarios (
 	updateAt TIMESTAMP,
 	deletedAt TIMESTAMP,
 	PRIMARY KEY (usuario_id),
-	FOREIGN KEY (persona_id) REFERENCES personas(persona_id)
+	FOREIGN KEY (persona_id) REFERENCES personas(persona_id) ON DELETE CASCADE
 );
 
 CREATE TABLE mimusica (
@@ -38,7 +38,7 @@ CREATE TABLE mimusica (
 	name varchar(250) NOT NULL,
 	author varchar(250) NOT NULL,
 	PRIMARY KEY (mi_musica_id),
-	FOREIGN KEY (persona_id) REFERENCES personas(persona_id)
+	FOREIGN KEY (persona_id) REFERENCES personas(persona_id) ON DELETE CASCADE
 );
 
 -- 1. Script para poblar todas las tablas. 

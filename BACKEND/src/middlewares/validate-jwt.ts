@@ -5,7 +5,6 @@ import connection from '../database/config';
 
 const validateJWT = async (req: Request | any, res: Response, next: NextFunction) => {
    const token = req.header('x-token');
-   console.log(token)
    if (!token) {
       return res.status(401).json({
          msg: 'Acceso no autorizado',
