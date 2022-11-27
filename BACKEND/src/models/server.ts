@@ -4,9 +4,13 @@ import 'colors';
 
 import dbConnection from '../database/config';
 
+import authRoutes from '../routes/auth';
+import userRoutes from '../routes/user';
+
 class Server {
    private app: Application;
    private port: string;
+   private path = '/api/v1/usuarios';
 
    constructor() {
       this.app = express();
@@ -40,11 +44,8 @@ class Server {
    }
 
    routes() {
-      this.app.get('/', (req, res) => {
-         res.json({
-            msg: 'Request made correctly'
-         });
-      });
+      this.app.use(this.path, authRoutes)
+      this.app.use(this.path, userRoutes)
    }
 
    listen() {
