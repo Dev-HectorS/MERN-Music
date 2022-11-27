@@ -1,8 +1,9 @@
+import { AppRouter } from './routes/AppRouter';
 
 const PruebaApp = () => {
    return (
       <>
-         <h1>PruebaApp</h1>
+         <AppRouter />
       </>
    )
 }
