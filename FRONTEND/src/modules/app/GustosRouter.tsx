@@ -34,7 +34,7 @@ export const GustosRouter = () => {
                         </Link>
                         <ul className="dropdown-menu">
                            <li>
-                              <NavLink className="dropdown-item" to="/pleasure">My Music</NavLink>
+                              <NavLink className="dropdown-item" to="/gustos">Mi Music</NavLink>
                            </li>
                         </ul>
                      </li>

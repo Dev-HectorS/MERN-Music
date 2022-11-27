@@ -8,3 +8,9 @@ export interface Details {
    genero: string;
    fecha_nacimiento: string;
 }
+
+export interface Music {
+   mi_musica_id?: number;
+   name: string;
+   author: string;
+}
