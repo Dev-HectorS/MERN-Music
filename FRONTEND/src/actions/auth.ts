@@ -75,6 +75,6 @@ export const initializeSignOut = (): any => {
    }
 };
 
-const signout = () => ({
+export const signout = () => ({
    type: types.signout
 });
