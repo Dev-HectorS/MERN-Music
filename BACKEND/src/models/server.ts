@@ -6,6 +6,7 @@ import dbConnection from '../database/config';
 
 import authRoutes from '../routes/auth';
 import userRoutes from '../routes/user';
+import gustoRoutes from '../routes/gusto';
 
 class Server {
    private app: Application;
@@ -46,6 +47,7 @@ class Server {
    routes() {
       this.app.use(this.path, authRoutes)
       this.app.use(this.path, userRoutes)
+      this.app.use(this.path, gustoRoutes)
    }
 
    listen() {
