@@ -16,7 +16,7 @@ export const initializeSignUpEmail = (usuario: NewUsuario): any => {
          const usuario_id = resultado.usuario_id;
          dispatch(activeSignIn(usuario_id));
 
-         Swal.fire('Sesión Existo', msg, 'success');
+         Swal.fire('Sesión Exitosa', msg, 'success');
       } else {
          Swal.fire('Error', msg, 'error');
       }
@@ -34,7 +34,7 @@ export const initializeSignInEmail = (usuario: LoginUsuario): any => {
          const usuario_id = resultado.usuario_id;
          dispatch(activeSignIn(usuario_id));
 
-         Swal.fire('Sesión Existo', msg, 'success');
+         Swal.fire('Sesión Exitosa', msg, 'success');
       } else {
          Swal.fire('Error', msg, 'error');
       }

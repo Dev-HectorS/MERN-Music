@@ -1,13 +1,15 @@
 # PRUEBA TÉCNICA
 
-### Archivos
-   * SQL/
+### Carpetas
+   * SQL
       > mi_test_db.sql - Dump
       > script.txt - Consultas
 
    * BACKEND
 
    * FRONTEND
+
+   * EVIDENCIA
 
 #### Importante
    * BACKEND
@@ -40,7 +42,31 @@
 
    * FRONTEND
 
-      * Reconstruir módulos de Node: `npm install`
+      * Reconstruir módulos de Node: `yarn install`
 
       * Para levantar poyecto:
          Run command `yarn start`
+
+      ##### NOTA:
+         * `.env.development` ya se encuentra definido con:
+            `REACT_APP_API_URL=http://localhost:8080/api/v1`
+
+         * `.env.production` no esta definido, hacer cambios si es necesario:
+
+#### Desarollo
+   * Backend
+      * Node
+      * Express
+      * TypeScript
+      * Mysql
+
+   * Frontend
+      * ReactJS
+      * TypeScript
+      * Redux
+      * Bootstrap / SASS
+
+#### Evidencia
+   * Agrego evidencia por si hay algún detalle al ejecutar proyecto:
+      * Video
+      * Fotografias
