@@ -5,6 +5,7 @@ import { SignInPage, SignUpPage } from './pages';
 const AuthRouter = () => {
    return (
       <>
+         <div className="background_blurry"></div>
          <Routes>
             <Route path="sign-in" element={<SignInPage />} />
             <Route path="sign-up" element={<SignUpPage />} />

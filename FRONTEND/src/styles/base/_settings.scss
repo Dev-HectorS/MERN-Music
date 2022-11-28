@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?famil=Poppins:wght@400;500;600&display=swap");
+
+body {
+   font-family: 'Open Sans', sans-serif;
+}
+
+a, a:hover {
+   text-decoration: none;
+   color: hsl(244, 75%, 57%);
+}
+
+button {
+   border: none;
+}
+
+$firstcolor: hsl(244, 75%, 57%);
+$secondcolor: hsl(249, 64%, 47%);
+$titlecolor: hsl(244, 12%, 12%);
+$textcolor: hsl(244, 4%, 36%);

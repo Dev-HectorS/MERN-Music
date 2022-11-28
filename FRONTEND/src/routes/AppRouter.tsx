@@ -2,7 +2,9 @@ import {
    BrowserRouter,
    Routes,
    Route,
+   Outlet,
 } from 'react-router-dom';
+import { WavyContainer } from 'react-wavy-transitions';
 
 import PublicRoute from './PublicRoute';
 import PrivateRoute from './PrivateRoute';
@@ -14,6 +16,8 @@ export const AppRouter = () => {
    return (
       <>
          <BrowserRouter>
+            <WavyContainer />
+            <Outlet />
 
             <Routes>
                <Route path="auth/*" element={

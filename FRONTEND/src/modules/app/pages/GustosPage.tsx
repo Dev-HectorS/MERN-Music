@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import { XSquareFill } from 'react-bootstrap-icons';
+import { XSquareFill, Pencil, Trash } from 'react-bootstrap-icons';
 import Modal from 'react-modal';
 import Swal from 'sweetalert2';
 
@@ -84,33 +84,37 @@ const GustosPage = () => {
             <br />
             <div className="row">
                <div className="col-6">
-                  <h1>Mi música</h1>
+                  <h2 className="profile__name">Mi música</h2>
                </div>
                <div className="col-6 text-end">
                   <button className="btn btn-primary" onClick={openModal}>Agregar</button>
                </div>
             </div>
-            <br />
+            <hr />
             <div>
                {
                   musics.length === 0
                      ?
-                     <div>
-                        No music
+                     <div className="alert alert-danger" role="alert">
+                        Sin canciones registradas, presione el botón "Agregar" para empezar a registrar tus canciones.
                      </div>
                      :
                      <div className="row">
                         {
                            musics.map((music: Music) => (
-                              <div className="col-6 col-lg-4">
-                                 <div className="card m-1">
-                                    <div className="p-2">
+                              <div className="col-12 col-lg-3" key={music.mi_musica_id}>
+                                 <div className="gusto__card m-1" >
+                                    <div className="gusto__card_info p-2">
                                        <h5>{music?.name}</h5>
-                                       <p>Autor: {music?.author}</p>
+                                       <p>{music?.author}</p>
                                     </div>
-                                    <div className="d-flex justify-content-between p-1">
-                                       <button className="btn" onClick={() => handleEditMusic(music)}>Editar</button>
-                                       <button className="btn btn-danger" onClick={() => handleDeleteMusic(music?.mi_musica_id)}>Eliminar</button>
+                                    <div className="gusto__card_button_container">
+                                       <button className="gusto__card_button_edit" onClick={() => handleEditMusic(music)}>
+                                          <Pencil />
+                                       </button>
+                                       <button className="gusto__card_button_delete" onClick={() => handleDeleteMusic(music?.mi_musica_id)}>
+                                          <Trash />
+                                       </button>
                                     </div>
                                  </div>
                               </div>
@@ -129,7 +133,7 @@ const GustosPage = () => {
             >
                <div className="row">
                   <div className="col text-end">
-                     <XSquareFill onClick={closeModal} />
+                     <XSquareFill className="gusto__modal_close" onClick={closeModal} />
                   </div>
                </div>
 
@@ -153,16 +157,16 @@ const GustosPage = () => {
                   }
                   enableReinitialize={true}
                >
-                  <Form>
-                     <label htmlFor="name" className="form-label">Name</label>
-                     <Field type="text" className="form-control" name="name" />
-                     <ErrorMessage name="name" component="span" />
-
-                     <label htmlFor="author" className="form-label">Author</label>
-                     <Field type="text" className="form-control" name="author" />
-                     <ErrorMessage name="author" component="span" />
-
+                  <Form className="gusto__modal">
+                     <label htmlFor="name" className="login_label">Name</label>
+                     <Field required type="text" className="login__input" name="name" placeholder="Ingrese su nombre de la cancion" />
+                     <ErrorMessage name="name" component="span" className="login__span" />
                      <br />
+                     <label htmlFor="author" className="login_label">Author</label>
+                     <Field required type="text" className="login__input" name="author" placeholder="Ingrese su author de la cancion" />
+                     <ErrorMessage name="author" component="span" className="login__span" />
+
+                     <hr />
                      <div className="d-grid gap-2">
                         <button type="submit" className="btn btn-primary">Agregar</button>
                      </div>

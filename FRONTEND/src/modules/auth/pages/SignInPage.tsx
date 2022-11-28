@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
+import { WavyLink } from 'react-wavy-transitions';
 
 import { initializeSignInEmail } from '../../../actions/auth';
 
@@ -14,9 +14,9 @@ const SignInPage = () => {
          <div className="container vh-100">
             <div className="row justify-content-center align-items-center h-100">
                <div className="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
-                  <div className="card shadow-lg">
+                  <div className="card login__card shadow-lg">
                      <div className="card-body p-5">
-                        <h1 className="fs-4 card-title fw-bold mb-4">Iniciar sesión</h1>
+                        <h3 className="login__title">Iniciar sesión</h3>
                         <Formik
                            initialValues={{
                               usuario: '',
@@ -37,30 +37,26 @@ const SignInPage = () => {
                         >
                            {(formik) => (
                               <Form >
-                                 <label htmlFor="usuario" className="form-label">Usuario</label>
-                                 <Field type="text" className="form-control" name="usuario" />
-                                 <ErrorMessage name="usuario" component="span" />
-
-                                 <label htmlFor="password" className="form-label">Contrasena</label>
-                                 <Field type="password" className="form-control" name="password" />
-                                 <ErrorMessage name="password" component="span" className="" />
-
+                                 <label htmlFor="usuario" className="login_label">Usuario</label>
+                                 <Field required type="text" className="login__input" name="usuario" placeholder="Ingrese su usuario" />
+                                 <ErrorMessage name="usuario" component="span" className="login__span" />
                                  <br />
-                                 <div className="row">
-                                    <div className="col">
-                                       <button type="submit" className="btn btn-primary">Iniciar sesión</button>
-                                    </div>
-                                    <div className="col align-self-center text-end">
-                                       <Link to="../sign-up" color="#8f44fd">
-                                          Crear cuenta
-                                       </Link>
-                                    </div>
+
+                                 <label htmlFor="password" className="login_label">Contraseña</label>
+                                 <Field required type="password" className="login__input" name="password" placeholder="Ingrese su contraseña" />
+                                 <ErrorMessage name="password" component="span" className="login__span" />
+                                 <br />
+
+                                 <hr />
+                                 <div className="login__buttons">
+                                    <button type="submit" className="login__button">Iniciar sesión</button>
+                                    <WavyLink direction="up" duration={1000} to="../sign-up" color="#4430CD" className="login__button login__button_border">
+                                       Crear cuenta
+                                    </WavyLink>
                                  </div>
                               </Form>
                            )}
                         </Formik>
-
-
                      </div>
                   </div>
                </div>

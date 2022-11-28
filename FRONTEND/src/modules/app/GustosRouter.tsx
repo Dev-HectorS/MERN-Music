@@ -14,7 +14,8 @@ export const GustosRouter = () => {
    }
    return (
       <>
-         <nav className="navbar navbar-expand-lg bg-light">
+         <div className="background_app"></div>
+         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
                <Link className="navbar-brand" to="/">Navbar</Link>
                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

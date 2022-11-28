@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
+import { WavyLink } from 'react-wavy-transitions';
 
 import { initializeSignUpEmail } from '../../../actions/auth';
 
@@ -13,10 +13,10 @@ const SignUpPage = () => {
       <>
          <div className="container vh-100">
             <div className="row justify-content-center align-items-center h-100">
-               <div className="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
-                  <div className="card shadow-lg">
+               <div className="col-xxl-6 col-xl-5 col-lg-5 col-md-9 col-sm-9">
+                  <div className="card login__card shadow-lg">
                      <div className="card-body p-5">
-                        <h1 className="fs-4 card-title fw-bold mb-4">Crear Nueva Cuenta</h1>
+                        <h3 className="login__title">Crear Nueva Cuenta</h3>
 
                         <Formik
                            initialValues={{
@@ -59,52 +59,68 @@ const SignUpPage = () => {
                         >
                            {(formik) => (
                               <Form >
-                                 <label htmlFor="nombre">Nombre</label>
-                                 <Field type="text" className="form-control" name="nombre" />
-                                 <ErrorMessage name="nombre" component="span" />
-
-                                 <label htmlFor="apaterno">Apellido Paterno</label>
-                                 <Field type="text" className="form-control" name="apaterno" />
-                                 <ErrorMessage name="apaterno" component="span" />
-
-                                 <label htmlFor="amaterno">Apellido Materno</label>
-                                 <Field type="text" className="form-control" name="amaterno" />
-                                 <ErrorMessage name="amaterno" component="span" />
-
-                                 <label htmlFor="telefono">Telefono</label>
-                                 <Field type="text" className="form-control" name="telefono" />
-                                 <ErrorMessage name="telefono" component="span" />
-
-                                 <label htmlFor="genero">Genero</label>
-                                 <Field className="form-select" as="select" name="genero" >
-                                    <option value="">Seleccione su genero</option>
-                                    <option value="M">Masculino</option>
-                                    <option value="F">Femenino</option>
-                                 </Field>
-                                 <ErrorMessage name="genero" component="span" />
-
-                                 <label htmlFor="fecha_nacimiento">Fecha de nacimiento</label>
-                                 <Field type="date" className="form-control" name="fecha_nacimiento" />
-                                 <ErrorMessage name="fecha_nacimiento" component="span" />
-
-                                 <label htmlFor="usuario">Usuario</label>
-                                 <Field type="text" className="form-control" name="usuario" />
-                                 <ErrorMessage name="usuario" component="span" />
-
-                                 <label htmlFor="password">Contrasena</label>
-                                 <Field type="password" className="form-control" name="password" />
-                                 <ErrorMessage name="password" component="span" />
-
-                                 <br />
-                                 <div className="row">
-                                    <div className="col align-self-center">
-                                       <Link to="sign-in">
-                                          Iniciar sesión
-                                       </Link>
+                                 <div className="row g-3">
+                                    <div className="col-12 col-md-6">
+                                       <label htmlFor="nombre" className="login_label">Nombre(s)</label>
+                                       <Field required type="text" className="login__input" name="nombre" placeholder="Ingrese su nombre(s)" />
+                                       <ErrorMessage name="nombre" component="span" className="login__span" />
                                     </div>
-                                    <div className="col text-end">
-                                       <button type="submit" className="btn btn-primary">Registrar</button>
+                                    <div className="col-12 col-md-6">
+                                       <label htmlFor="apaterno" className="login_label">Apellido Paterno</label>
+                                       <Field required type="text" className="login__input" name="apaterno" placeholder="Ingrese su apellido paterno" />
+                                       <ErrorMessage name="apaterno" component="span" className="login__span" />
                                     </div>
+                                 </div>
+
+                                 <div className="row g-3">
+                                    <div className="col-12 col-md-6">
+                                       <label htmlFor="amaterno" className="login_label">Apellido Materno</label>
+                                       <Field required type="text" className="login__input" name="amaterno" placeholder="Ingrese su apellido materno" />
+                                       <ErrorMessage name="amaterno" component="span" className="login__span" />
+                                    </div>
+                                    <div className="col-12 col-md-6">
+                                       <label htmlFor="telefono" className="login_label">Telefono</label>
+                                       <Field required type="text" className="login__input" name="telefono" placeholder="xxxxxxxxxx" />
+                                       <ErrorMessage name="telefono" component="span" className="login__span" />
+                                    </div>
+                                 </div>
+
+                                 <div className="row g-3">
+                                    <div className="col-12 col-md-6">
+                                       <label htmlFor="genero" className="login_label">Genero</label>
+                                       <Field required className="login__input" as="select" name="genero" >
+                                          <option value="">Seleccione su genero</option>
+                                          <option value="M">Masculino</option>
+                                          <option value="F">Femenino</option>
+                                       </Field>
+                                       <ErrorMessage name="genero" component="span" className="login__span" />
+                                    </div>
+                                    <div className="col-12 col-md-6">
+                                       <label htmlFor="fecha_nacimiento" className="login_label">Fecha de nacimiento</label>
+                                       <Field required type="date" className="login__input" name="fecha_nacimiento" />
+                                       <ErrorMessage name="fecha_nacimiento" component="span" className="login__span" />
+                                    </div>
+                                 </div>
+
+                                 <div className="row g-3">
+                                    <div className="col-12 col-lg-6">
+                                       <label htmlFor="usuario" className="login_label">Usuario</label>
+                                       <Field required type="text" className="login__input" name="usuario" placeholder="Ingrese su usuario" />
+                                       <ErrorMessage name="usuario" component="span" className="login__span" />
+                                    </div>
+                                    <div className="col-12 col-lg-6">
+                                       <label htmlFor="password" className="login_label">Contrasena</label>
+                                       <Field required type="password" className="login__input" name="password" placeholder="**********" />
+                                       <ErrorMessage name="password" component="span" className="login__span" />
+                                    </div>
+                                 </div>
+                                 <hr />
+
+                                 <div className="login__buttons">
+                                    <WavyLink direction="down" duration={1000} to="sign-in" color="#ffffff">
+                                       Iniciar sesión
+                                    </WavyLink>
+                                    <button type="submit" className="login__button">Registrar</button>
                                  </div>
                               </Form>
                            )}

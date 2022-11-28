@@ -44,20 +44,18 @@ const ProfilePage = () => {
             <div className="row">
                <div className="col-6 d-flex align-items-center">
                   <img src={userImg} alt="user-pic" height={40} />
-                  <h1 className="px-2">{details.nombre}</h1>
+                  <h1 className="px-2 profile__name">{details.nombre}</h1>
                </div>
                <div className="col-6 align-self-center text-end">
                   <button className="btn btn-danger" onClick={handleDeleteAcccount}>Eliminar mi cuenta</button>
                </div>
             </div>
             <br />
-            <div className="card">
-               <div className="px-4">
-                  <h6>Mi información</h6>
-                  <h5>{details.nombre}</h5>
-                  <h5>{(details.genero === 'M') ? 'Masculino' : 'Femenino'}</h5>
-                  <h5>{ageFormat(details.fecha_nacimiento)} años</h5>
-               </div>
+            <div className="app__card">
+               <h2>Mi información</h2>
+               <h5>{details.nombre}</h5>
+               <h5>{(details.genero === 'M') ? 'Masculino' : 'Femenino'}</h5>
+               <h5>{ageFormat(details.fecha_nacimiento)} años</h5>
             </div>
          </div>
       </>

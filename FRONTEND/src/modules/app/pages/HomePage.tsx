@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { initializeLoadUsuario } from '../../../actions/user';
 
+import pruebaImg from '../images/prueba.png';
+
 const HomePage = () => {
 
    const dispatch = useDispatch();
@@ -22,11 +24,10 @@ const HomePage = () => {
             <h1>Bienvenido {details.nombre}</h1>
 
             <br />
-            <div className="card p-2">
-
-               <h2>My sitio</h2>
-
-               <p>Prueba tecnica WEB Full Stack</p>
+            <div className="app__card">
+               <h2>Mi sitio</h2>
+               <img src={pruebaImg} alt="prueba-img" />
+               <p>Prueba técnica WEB Full Stack</p>
             </div>
          </div>
       </>
