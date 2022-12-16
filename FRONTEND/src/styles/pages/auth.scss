@@ -1,0 +1,101 @@
+.background_blurry {
+   width: 100%;
+   height: 100%;
+   position: fixed;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background: #e6dada;
+   background: -webkit-linear-gradient(to bottom, #e6dada, #493DE0);
+   background: linear-gradient(to bottom, #e6dada, #6f66f1);
+}
+
+.login__card {
+   background-color: hsla(244, 16%, 92%,.6);
+   border: 2px solid hsla(244, 16%, 92%, .75);
+}
+
+.login__title {
+   // font-size: 1.25rem;
+   color: $firstcolor;
+   margin-bottom: .5rem;
+}
+
+.login_label {
+   color: $titlecolor;
+   font-size: .900rem;
+   font-weight: 600;
+   margin-bottom: .30rem;
+}
+
+.login__input {
+   width: 100%;
+   padding: 10px 12px;
+   border-radius: 6px;
+   border: 2px solid $textcolor;
+   background-color: hsla(244, 16%, 92%,.6);
+   color: $titlecolor;
+   font-size: .900rem;
+   font-weight: 500;
+   transition: border .4s;
+   
+   &::placeholder{
+      color: $textcolor;
+   }
+
+   &:focus,&:valid{
+      border: 2px solid $firstcolor;
+   }
+}
+
+.login__span {
+   color: red;
+   font-weight: 500;
+   font-size: .700rem;
+}
+
+.login__buttons {
+   display: flex;
+   column-gap: .75rem;
+}
+
+.login__button {
+   width: 100%;
+   padding: 14px 2rem;
+   border-radius: 6px;
+   background: linear-gradient(180deg, $firstcolor, $secondcolor);
+   color: white;
+   text-align: center;
+   font-size: .813rem;
+   font-weight: 600;
+   cursor: pointer;
+
+   &:hover{
+      box-shadow: 0 6px 24px hsla(244, 75%, 48%, .5);
+   }
+}
+
+.login__button_border {
+   background: hsla(244, 16%, 92%, .6);
+   border: 2px solid $firstcolor;
+   color: $firstcolor;
+   box-shadow: none;
+}
+
+.react-wavy-transitions__wavy-link {
+   width: 100%;
+   border-radius: 6px;
+   background: linear-gradient(180deg, $firstcolor, $secondcolor);
+   color: white;
+   text-align: center;
+   font-size: .813rem !important;
+   font-weight: 600;
+   cursor: pointer;
+   background: hsla(244, 16%, 92%, .6) !important;
+   border: 2px solid $firstcolor !important;
+   color: $firstcolor !important;
+   box-shadow: none !important;
+
+   &:hover {
+      box-shadow: 0 6px 24px hsla(244, 75%, 48%, .5) !important;
+   }
+}
